@@ -2,7 +2,7 @@
   "author": "Sergei Ianovich <ynvich@gmail.com>",
   "name": "i18n-t",
   "description": "i18n package for node.js with RoR-style syntax",
-  "version": "0.1",
+  "version": "0.0.0",
   "homepage": "https://github.com/yanovich/i18n-t",
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
     "js-yaml": "3.0.2"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "should": "*"
   },
   "scripts": {
     "test": "NODE_PATH=lib node_modules/.bin/mocha"
