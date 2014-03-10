@@ -35,6 +35,17 @@ describe('i18n', function () {
       i18n.t('hi').should.equal('Greetings!');
     });
   });
+
+  describe('interpolation', function () {
+    var i18n;
+    before (function () {
+      i18n = require('../lib/i18n')({ locales_directory: 'c' });
+    })
+
+    it('should expand string', function () {
+      i18n.t('E', { E: 'mc2' }).should.equal('E = mc2');
+    });
+  });
 })
 
 // vim:ts=2 sts=2 sw=2 et:
