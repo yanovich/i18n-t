@@ -1,0 +1,5 @@
+ru:
+  banana:
+    one: '%{count} банан'
+    few: '%{count} банана'
+    many: '%{count} бананов'
