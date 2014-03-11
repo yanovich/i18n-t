@@ -42,8 +42,20 @@ describe('i18n', function () {
       i18n = require('../lib/i18n')({ locales_directory: 'c' });
     })
 
-    it('should expand string', function () {
+    it('should expand a key with a parameter', function () {
       i18n.t('E', { E: 'mc2' }).should.equal('E = mc2');
+    });
+
+    it('should expand a key with a different parameter', function () {
+      i18n.t('E', { E: 'mgh' }).should.equal('E = mgh');
+    });
+
+    it('should translate a nested key', function () {
+      i18n.t('a.b').should.equal('b in a');
+    });
+
+    it('should fail on a non-leaf key', function () {
+      i18n.t('a').should.equal('{{{Missing translation for "a"}}}');
     });
   });
 })
