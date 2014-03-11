@@ -57,6 +57,11 @@ describe('i18n', function () {
     it('should fail on a non-leaf key', function () {
       i18n.t('a').should.equal('{{{Missing translation for "a"}}}');
     });
+
+    it('should expand a key with pluralization', function () {
+      i18n.t('banana', { count: 1 }).should.equal('one banana');
+      i18n.t('banana', { count: 2 }).should.equal('2 bananas');
+    });
   });
 })
 

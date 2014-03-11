@@ -2,3 +2,6 @@ en:
   E: E = %{E}
   a:
     b: b in a
+  banana:
+    one: one banana
+    other: '%{count} bananas'
