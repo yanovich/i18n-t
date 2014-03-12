@@ -3,3 +3,4 @@ ru:
     one: '%{count} банан'
     few: '%{count} банана'
     many: '%{count} бананов'
+    other: '%{count} банана'
