@@ -10,7 +10,7 @@ describe('Russian', function () {
     var i18n;
     before (function () {
       i18n = require('../lib/i18n')({ locales_directory: 'ru' ,
-                                      supported_languages: ['ru']});
+                                      supported_languages: ['ru']}).request();
     })
 
     it('should expand a key with pluralization', function () {

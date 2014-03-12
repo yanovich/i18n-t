@@ -7,14 +7,14 @@
 
 describe('i18n', function () {
   it('should translate a key with default settings', function () {
-    var i18n = require('../lib/i18n')();
+    var i18n = require('../lib/i18n')().request();
 
     i18n.t.should.be.type('function');
     i18n.t('hi').should.equal('Greetings!');
   });
 
   it('should accept option for locales directory', function () {
-    var i18n = require('../lib/i18n')({ locales_directory: 'a/b' });
+    var i18n = require('../lib/i18n')({ locales_directory: 'a/b' }).request();
 
     i18n.t.should.be.type('function');
     i18n.t('hi').should.equal('Hi!');
@@ -23,7 +23,7 @@ describe('i18n', function () {
   describe('with multiple languages', function () {
     var i18n;
     before (function () {
-      i18n = require('../lib/i18n')({ supported_languages: ['ru', 'en'] });
+      i18n = require('../lib/i18n')({ supported_languages: ['ru', 'en'] }).request();
     })
 
     it('should accept option for supported languages', function () {
@@ -39,7 +39,7 @@ describe('i18n', function () {
   describe('interpolation', function () {
     var i18n;
     before (function () {
-      i18n = require('../lib/i18n')({ locales_directory: 'c' });
+      i18n = require('../lib/i18n')({ locales_directory: 'c' }).request();
     })
 
     it('should expand a key with a parameter', function () {
