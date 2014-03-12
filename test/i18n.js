@@ -63,6 +63,23 @@ describe('i18n', function () {
       i18n.t('banana', { count: 2 }).should.equal('2 bananas');
     });
   });
+
+  describe('express middleware', function () {
+    var i18n;
+    before (function () {
+      i18n = require('../lib/i18n')({ supported_languages: ['ru', 'en'] });
+    })
+
+    it('should install properly', function () {
+      var middleware = i18n.express();
+      var req = { headers: { 'accept-language': 'en-US,en' } };
+      var res = { locals: {} };
+      middleware(req, res, function () {
+        req.t('hi').should.equal('Greetings!');
+        res.locals.t('hi').should.equal('Greetings!');
+      });
+    });
+  });
 })
 
 // vim:ts=2 sts=2 sw=2 et:
